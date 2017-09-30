@@ -1,6 +1,8 @@
 require 'openssl'
 
 class User < ApplicationRecord
+  attr_accessor :password
+
   # параметры работы модуля шифрования паролей
   ITERATIONS = 20000
   DIGEST = OpenSSL::Digest::SHA256.new
@@ -11,14 +13,15 @@ class User < ApplicationRecord
   validates_email_format_of :email, :message => 'is not looking good'
   validates :username, uniqueness: true, presence: true, format: { with: /\A[a-zA-Z][a-zA-Z0-9-_]{2,40}$\z/ }
 
-
-  attr_accessor :password
-
   validates_presence_of :password, on: :create
-
   validates_confirmation_of :password
 
   before_save :encrypt_password
+  before_validation :username_downcase
+
+  def username_downcase
+    username.downcase! if username.present?
+  end
 
   def encrypt_password
     if self.password.present?
