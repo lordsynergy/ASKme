@@ -123,6 +123,8 @@ GEM
     tilt (2.0.8)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
+    validates_email_format_of (1.6.3)
+      i18n
     web-console (3.5.1)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -143,6 +145,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sqlite3
   tzinfo-data
+  validates_email_format_of
   web-console (>= 3.3.0)
 
 BUNDLED WITH

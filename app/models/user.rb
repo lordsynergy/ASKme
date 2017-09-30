@@ -7,8 +7,10 @@ class User < ApplicationRecord
 
   has_many :questions
 
-  validates :email, :username, presence: true
-  validates :email, :username, uniqueness: true
+  validates :email, uniqueness: true, presence: true
+  validates_email_format_of :email, :message => 'is not looking good'
+  validates :username, uniqueness: true, presence: true, format: { with: /\A[a-zA-Z][a-zA-Z0-9-_]{2,40}$\z/ }
+
 
   attr_accessor :password
 
