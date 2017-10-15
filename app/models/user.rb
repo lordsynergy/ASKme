@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true, presence: true
   validates_email_format_of :email, :message => 'is not looking good'
-  validates :username, uniqueness: true, presence: true, format: { with: /\A[a-zA-Z][a-zA-Z0-9-_]{2,40}$\z/ }
+  validates :username, uniqueness: true, presence: true, length: { in: 2..40 }, format: { with: /\A[a-zA-Z][a-zA-Z0-9-_]*\z/ }
 
   validates_presence_of :password, on: :create
   validates_confirmation_of :password

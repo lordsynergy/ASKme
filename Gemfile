@@ -31,3 +31,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Гем для валидации email
 gem 'validates_email_format_of'
+gem 'jquery-rails'
