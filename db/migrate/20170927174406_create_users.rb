@@ -1,5 +1,5 @@
 # Миграция, создающая сущность (таблицу) пользователя в базе.
-class CreateUsers < ActiveRecord::Migration
+class CreateUsers < ActiveRecord::Migration[5.1]
   def change
     # Создает таблицу "users"
     create_table :users do |t|
