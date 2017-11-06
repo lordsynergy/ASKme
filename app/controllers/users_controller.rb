@@ -84,6 +84,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user.destroy
+    redirect_to root_url, notice: 'Аккаунт удален'
+  end
+
   # Это действие отзывается, когда пользователь заходит по адресу /users/:id,
   # например /users/1
   #

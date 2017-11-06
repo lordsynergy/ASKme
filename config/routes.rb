@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # список юзеров.
   root 'users#index'
 
-  # Ресурс пользователей (экшен destroy не поддерживается)
+  # Ресурс пользователей
   resources :users
 
   # Ресурс вопросов (кроме экшенов :show, :new, :index)
