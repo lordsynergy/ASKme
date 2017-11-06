@@ -20,6 +20,15 @@
     <div class="question-date">
       <%= l(question.created_at, format: :short) %>
     </div>
+
+    <%# Добавляем автора вопроса%>
+    <div class="question-date">
+      <% if question.author.present? %>
+        <%=  link_to 'От: ' + question.author.username, user_path(question.author) %>
+      <% else %>
+        <p>Автор не представился</p>
+    </div>
+    <% end %>
   </div>
 
   <%# Если адресат вопроса — текущий пользователь, он может редактировать вопрос %>
