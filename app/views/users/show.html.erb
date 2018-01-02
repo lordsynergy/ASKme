@@ -52,7 +52,6 @@
 <%# Блок с формой для задавания пользователю вопроса %>
 <div class="user-question-form-div column-1-4 column-1-4-right" id='ask-form'>
   <div class="user-question-form buffer-both">
-    <div class="form">
       <%# Мы используем хелпер form_for, принимающий на вход блок erb-кода, %>
       <%# в котором доступна переменная f, содержащая так называемый form %>
       <%# builder, с помощью которого можно делать поля формы для нового %>
@@ -74,7 +73,6 @@
             <%= submit_tag 'Задать вопрос', class: 'button button-small button-dark' %>
           </div>
       <% end %>
-    </div>
   </div>
 </div>
 
